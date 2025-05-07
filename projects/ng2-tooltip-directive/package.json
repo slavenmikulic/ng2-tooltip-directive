@@ -1,10 +1,10 @@
 {
-  "name": "@cloudfactorydk/ng2-tooltip-directive",
-  "version": "18.0.0",
+  "name": "@insightfulio/ng2-tooltip-directive",
+  "version": "19.0.0",
   "description": "Tooltip for Angular",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cloudfactorydk/ng2-tooltip-directive.git"
+    "url": "git+https://github.com/slavenmikulic/ng2-tooltip-directive.git"
   },
   "author": {
     "name": "Cloud Factory A/S",
@@ -24,11 +24,11 @@
   "homepage": "https://cloudfactory.dk",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cloudfactorydk/ng2-tooltip-directive/issues"
+    "url": "https://github.com/slavenmikulic/ng2-tooltip-directive/issues"
   },
   "peerDependencies": {
-    "@angular/common": "^18.0.0",
-    "@angular/core": "^18.0.0"
+    "@angular/common": "^19.0.0",
+    "@angular/core": "^19.0.0"
   },
   "dependencies": {
     "tslib": "^2.6.2"
