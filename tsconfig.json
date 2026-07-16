@@ -2,7 +2,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -10,18 +9,17 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
-    "downlevelIteration": true,
     "paths": {
       "ng2-tooltip-directive": [
-        "dist/ng2-tooltip-directive/ng2-tooltip-directive",
-        "dist/ng2-tooltip-directive"
+        "./dist/ng2-tooltip-directive/ng2-tooltip-directive",
+        "./dist/ng2-tooltip-directive"
       ]
     },
     "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "importHelpers": true,
-    "target": "es2020",
-    "module": "es2020",
+    "target": "es2022",
+    "module": "preserve",
     "lib": [
       "es2018",
       "dom"

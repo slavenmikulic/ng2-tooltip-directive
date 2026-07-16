@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, Input, ComponentFactoryResolver, EmbeddedViewRef, ApplicationRef, Injector, ComponentRef, OnInit, Output, EventEmitter, OnDestroy, Inject, Optional, SimpleChanges } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input, createComponent, EmbeddedViewRef, ApplicationRef, Injector, ComponentRef, OnInit, Output, EventEmitter, OnDestroy, Inject, Optional, SimpleChanges } from '@angular/core';
 import { TooltipComponent } from './tooltip.component';
 import { TooltipOptionsService } from './options.service';
 import { defaultOptions, backwardCompatibilityOptions } from './options';
@@ -14,6 +14,7 @@ export interface AdComponent {
 @Directive({
     selector: '[tooltip]',
     exportAs: 'tooltip',
+    standalone: false,
 })
 
 export class TooltipDirective {
@@ -205,7 +206,6 @@ export class TooltipDirective {
     constructor(
         @Optional() @Inject(TooltipOptionsService) private initOptions:any,
         private elementRef: ElementRef,
-        private componentFactoryResolver: ComponentFactoryResolver,
         private appRef: ApplicationRef,
         private injector: Injector) {}
 
@@ -363,9 +363,10 @@ export class TooltipDirective {
     }
 
     appendComponentToBody(component: any, data: any = {}): void {
-        this.componentRef = this.componentFactoryResolver
-            .resolveComponentFactory(component)
-            .create(this.injector);
+        this.componentRef = createComponent(component, {
+            environmentInjector: this.appRef.injector,
+            elementInjector: this.injector
+        });
 
         ( < AdComponent > this.componentRef.instance).data = {
             value: this.tooltipValue,
