@@ -335,7 +335,7 @@ export class TooltipDirective {
                 this.appRef.detachView(this.componentRef.hostView);
                 this.componentRef.destroy();
                 this.events.emit({
-                    type: 'hidden', 
+                    type: 'hidden',
                     position: this.tooltipPosition
                 });
             }, options.fast ? 0 : this.destroyDelay);
@@ -356,10 +356,15 @@ export class TooltipDirective {
             return;
         }
         ( < AdComponent > this.componentRef.instance).show = false;
+        this.detectTooltipChanges();
         this.events.emit({
             type: 'hide',
             position: this.tooltipPosition
         });
+    }
+
+    private detectTooltipChanges(): void {
+        this.componentRef.changeDetectorRef.detectChanges();
     }
 
     appendComponentToBody(component: any, data: any = {}): void {

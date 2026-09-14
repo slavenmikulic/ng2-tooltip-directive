@@ -1,13 +1,13 @@
 {
-  "name": "@cloudfactorydk/ng2-tooltip-directive",
-  "version": "22.0.0",
+  "name": "@slavenmikulic/ng2-tooltip-directive",
+  "version": "22.0.1",
   "description": "Tooltip for Angular",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cloudfactorydk/ng2-tooltip-directive.git"
+    "url": "git+https://github.com/slavenmikulic/ng2-tooltip-directive.git"
   },
   "author": {
-    "name": "Cloud Factory A/S",
+    "name": "Slaven",
     "email": ""
   },
   "keywords": [
