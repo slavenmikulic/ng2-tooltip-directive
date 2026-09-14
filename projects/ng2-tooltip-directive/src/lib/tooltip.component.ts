@@ -2,6 +2,7 @@ import {Component, ElementRef, HostListener, HostBinding, Input, OnInit, EventEm
 
 @Component({
     selector: 'tooltip',
+    standalone: false,
     templateUrl: './tooltip.component.html',
     host: {
         'class': 'tooltip'
